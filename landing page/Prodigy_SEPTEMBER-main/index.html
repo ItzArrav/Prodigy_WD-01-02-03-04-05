@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Koko Bakery</title>
+    <style>
+        /* Add a CSS class to hide sections by default */
+        .hidden {
+            display: none;
+        }
+
+         /* Define animation for showing/hiding sections */
+         .animate {
+            animation-duration: 0.5s;
+            animation-timing-function: ease;
+        }
+
+        /* Define animation keyframes */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Apply fade-in animation to sections */
+        .fade-in {
+            animation-name: fadeIn;
+        }
+
+        /* Add transition for smooth page transitions */
+        body {
+            transition: background-color 0.5s ease;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="main-content animate">
+        <!-- Home section content -->
+        <h1>Welcome to Koko Cake Workshop</h1>
+        <p>Creating Sweet Memories, One Cake at a Time</p>
+        <img src="https://i.pinimg.com/originals/dd/b9/fc/ddb9fc25dc2396cf7fcaf3bd2f4a646a.jpg" >
+    </header>
+
+    <section id="about" class="main-content animate hidden">
+        <!-- About section content -->
+        <div class="container">
+            <div class="column">
+                <h2>About Us</h2>
+                <p>At Koko Cake Workshop, we are passionate about baking and creating delicious cakes that bring joy to your special moments.</p>
+            </div>
+            <div class="column">
+                <h2>Our Story</h2>
+                <p>Our journey began with a love for baking. Learn more about how we started and what drives our creativity.</p>
+            </div>
+            <div class="column">
+                <h2>Our Team</h2>
+                <p>Meet our talented team of bakers and cake artists who make our workshop a sweet success.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="services" class="main-content animate hidden">
+        <!-- Services section content -->
+        <div class="container">
+            <h2>Our Cake Services</h2>
+            <ul>
+                <li>Custom Cake Design</li>
+                <li>Cake Decorating Classes</li>
+                <li>Cake Delivery</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="contact" class="main-content animate hidden">
+        <!-- Contact section content -->
+        <div class="container">
+            <div class="column">
+                <h2>Contact Us</h2>
+                <p>If you have any questions or would like to order a custom cake, please don't hesitate to contact us using the form below:</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="column">
+                <h3>Contact Form</h3>
+                <form>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="main-content animate hidden">
+        <!-- Image Gallery -->
+        <div class="container">
+            <div class="column">
+                <h2>Our Cake Gallery</h2>
+                <div class="image-gallery">
+                    <div class="gallery-item">
+                        <img src="cake1.jpg" alt="Beautiful custom cake">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="cake2.jpg" alt="Cake 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="cake3.jpg" alt="Cake 3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="column">
+                <h2>Contact Information</h2>
+                <p>Address: [Gola Road, Patna, Bihar]</p>
+                <p>Email: [Khushikumari5587@gmail.com]</p>
+                <p>Phone: [7870883933]</p>
+            </div>
+            <div class="column">
+                <h2>Follow Us</h2>
+                <p>Stay connected with us on social media:</p>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <p> 2023 Koko Cake Workshop</p>
+    </footer>
+
+    <script>
+        // Function to scroll to a specific section smoothly
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                window.scrollTo({
+                    top: section.offsetTop,
+                    behavior: 'smooth',
+                });
+            }
+        }
+
+        // Function to show/hide sections based on the clicked link
+        function toggleSection(sectionId) {
+            const sections = document.querySelectorAll('.main-content');
+            sections.forEach((section) => {
+                if (section.id === sectionId) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
+                }
+            });
+        }
+
+        // Add click event listeners to the navigation links
+        const homeLink = document.querySelector('a[href="#home"]');
+        if (homeLink) {
+            homeLink.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent the default behavior of the link
+                toggleSection('home');
+                scrollToSection('home');
+            });
+        }
+
+        const aboutLink = document.querySelector('a[href="#about"]');
+        if (aboutLink) {
+            aboutLink.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent the default behavior of the link
+                toggleSection('about');
+                scrollToSection('about');
+            });
+        }
+
+        const servicesLink = document.querySelector('a[href="#services"]');
+        if (servicesLink) {
+            servicesLink.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent the default behavior of the link
+                toggleSection('services');
+                scrollToSection('services');
+            });
+        }
+
+        const contactLink = document.querySelector('a[href="#contact"]');
+        if (contactLink) {
+            contactLink.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent the default behavior of the link
+                toggleSection('contact');
+                scrollToSection('contact');
+            });
+        }
+
+        const galleryLink = document.querySelector('a[href="#gallery"]');
+        if (galleryLink) {
+            galleryLink.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent the default behavior of the link
+                toggleSection('gallery');
+                scrollToSection('gallery');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a background color for the whole page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5061d
+    
+}
+
+/* Style the navigation bar */
+.navbar {
+    background-color: #f107be;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffcc00; /* Change the color on hover */
+    transform: scale(1.1);
+}
+
+/* Style the header */
+/* Additional Styles for an Impressive Landing Page */
+
+/* Style the header for a captivating introduction */
+header {
+    background: url('https://tse1.mm.bing.net/th?id=OIP.kx0uuy0AvWq2uwyOecjsRgHaFX&pid=Api&P=0&h=180') center/cover no-repeat;
+    text-align: center;
+    padding: 100px 0;
+    color: white;
+    position: relative; /* To position content over the image */
+}
+
+/* Add a semi-transparent overlay to the header image for readability */
+header::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.5); /* Adjust the alpha (last value) for opacity */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header h1 {
+    font-size: 48px; /* Increase the font size for impact */
+    margin-bottom: 20px;
+    font-family: 'Pacifico', cursive;
+}
+
+/* Style the navigation bar for better visibility */
+.navbar {
+    background-color: #f60d0d;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 1rem 0;
+    position: sticky; /* Keep the navbar visible while scrolling */
+    top: 0;
+    z-index: 100; /* Ensure it's above other content */
+}
+
+/* Add a subtle box-shadow to the navbar for depth */
+.navbar {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add a stylish hover effect to navigation links */
+.navbar a:hover {
+    color: #ffcc00;
+    transform: scale(1.1); /* Slightly scale the link on hover */
+}
+
+/* Add a subtle parallax effect to the header image */
+header {
+    background-attachment: fixed;
+}
+
+/* Style the "About," "Services," and "Contact" sections */
+.main-content {
+    background-color: #f4f4f7df; /* Light background color */
+    padding: 80px 0; /* Increase padding for better spacing */
+}
+
+.column h2 {
+    font-size: 28px; /* Slightly reduce font size */
+    margin-bottom: 15px; /* Smaller margin for better spacing */
+    font-family: 'Lobster', cursive;
+}
+
+.column p {
+    font-size: 18px; /* Larger font size for readability */
+    color: #f7f9fa; /* Darker text color */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Add a subtle border to columns for separation */
+.column {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners for a modern look */
+    background-color: rgba(80, 74, 74, 0.82);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Style the footer for a finishing touch */
+footer {
+    background-color: #222; /* Dark background color */
+    color: #888; /* Lighter text color */
+    padding: 40px 0;
+    font-size: 16px; /* Slightly larger font size */
+}
+
+/* Add hover effects to footer links */
+footer a:hover {
+    color: #ffcc00;
+}
+
+/* Responsive design adjustments */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 36px;
+    }
+    .column {
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+    }
+    .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .gallery-item {
+        margin: 10px;
+        overflow: hidden;
+        transform: scale(1);
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        border: 2px solid #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+
+    .gallery-item:hover {
+        transform: scale(1.1);
+ 
+    }
+}
+
+
